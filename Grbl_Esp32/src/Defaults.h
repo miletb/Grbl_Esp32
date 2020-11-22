@@ -123,11 +123,13 @@
 #endif
 
 #ifndef DEFAULT_HOMING_CYCLE_0
-#    define DEFAULT_HOMING_CYCLE_0 bit(Z_AXIS)
+#    define DEFAULT_HOMING_CYCLE_0 (bit(X_AXIS) | bit(Y_AXIS))
+//#    define DEFAULT_HOMING_CYCLE_0 bit(Z_AXIS)
 #endif
 
 #ifndef DEFAULT_HOMING_CYCLE_1
-#    define DEFAULT_HOMING_CYCLE_1 (bit(X_AXIS) | bit(Y_AXIS))
+//#    define DEFAULT_HOMING_CYCLE_1 (bit(X_AXIS) | bit(Y_AXIS))
+#    define DEFAULT_HOMING_CYCLE_1 0
 #endif
 
 #ifndef DEFAULT_HOMING_CYCLE_2
@@ -164,7 +166,7 @@
 #endif
 
 #ifndef DEFAULT_SPINDLE_FREQ
-#    define DEFAULT_SPINDLE_FREQ 5000.0  // $33 Hz (extended set)
+#    define DEFAULT_SPINDLE_FREQ 20000.0  // $33 Hz (extended set)
 #endif
 
 #ifndef DEFAULT_SPINDLE_OFF_VALUE

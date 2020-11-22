@@ -90,17 +90,18 @@ const int MAX_N_AXIS = 6;
 // Serial baud rate
 // OK to change, but the ESP32 boot text is 115200, so you will not see that is your
 // serial monitor, sender, etc uses a different value than 115200
-#define BAUD_RATE 115200
+//#define BAUD_RATE 115200
+#define BAUD_RATE 460800
 
 //Connect to your local AP with these credentials
-//#define CONNECT_TO_SSID  "your SSID"
-//#define SSID_PASSWORD  "your SSID password"
+#define CONNECT_TO_SSID  "EMTEES"
+#define SSID_PASSWORD  "2203mile"
 //CONFIGURE_EYECATCH_BEGIN (DO NOT MODIFY THIS LINE)
-#define ENABLE_BLUETOOTH  // enable bluetooth
+//#define ENABLE_BLUETOOTH  // enable bluetooth
 
-#define ENABLE_SD_CARD  // enable use of SD Card to run jobs
+//#define ENABLE_SD_CARD  // enable use of SD Card to run jobs
 
-#define ENABLE_WIFI  //enable wifi
+//#define ENABLE_WIFI  //enable wifi
 
 #if defined(ENABLE_WIFI) || defined(ENABLE_BLUETOOTH)
 #    define WIFI_OR_BLUETOOTH
@@ -273,8 +274,8 @@ const double SAFETY_DOOR_COOLANT_DELAY = 1.0;  // Float (seconds)
 
 // Inverts the selected coolant pin from low-disabled/high-enabled to low-enabled/high-disabled. Useful
 // for some pre-built electronic boards.
-// #define INVERT_COOLANT_FLOOD_PIN // Default disabled. Uncomment to enable.
-// #define INVERT_COOLANT_MIST_PIN // Default disabled. Note: Enable M7 mist coolant in config.h
+//#define INVERT_COOLANT_FLOOD_PIN // Default disabled. Uncomment to enable.
+#define INVERT_COOLANT_MIST_PIN // Default disabled. Note: Enable M7 mist coolant in config.h
 
 // When Grbl powers-cycles or is hard reset with the Arduino reset button, Grbl boots up with no ALARM
 // by default. This is to make it as simple as possible for new users to start using Grbl. When homing
@@ -501,7 +502,7 @@ const int DWELL_TIME_STEP = 50;  // Integer (1-255) (milliseconds)
 // A simple software debouncing feature for hard limit switches. When enabled, the limit
 // switch interrupt unblock a waiting task which will recheck the limit switch pins after
 // a short delay. Default disabled
-//#define ENABLE_SOFTWARE_DEBOUNCE // Default disabled. Uncomment to enable.
+#define ENABLE_SOFTWARE_DEBOUNCE // Default disabled. Uncomment to enable.
 const int DEBOUNCE_PERIOD = 32;  // in milliseconds default 32 microseconds
 
 // Configures the position after a probing cycle during Grbl's check mode. Disabled sets
@@ -538,7 +539,7 @@ const int DEBOUNCE_PERIOD = 32;  // in milliseconds default 32 microseconds
 // Some senders may not be able to parse anything different from the original set
 // You can still set these like $33=5000, but you cannot read them back.
 // Default is off to limit support issues...you can enable here or in your machine definition file
-// #define SHOW_EXTENDED_SETTINGS
+#define SHOW_EXTENDED_SETTINGS
 
 // Writing to non-volatile storage (NVS) can take a long time and interfere with timely instruction
 // execution, causing problems for the stepper ISRs and serial comm ISRs and subsequent loss of
